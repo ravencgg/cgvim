@@ -629,9 +629,9 @@ VIM = vim
 ! if "$(OPTIMIZE)" == "SPACE"
 OPTFLAG = /O1
 ! elseif "$(OPTIMIZE)" == "SPEED"
-OPTFLAG = /O2
-! else # MAXSPEED
 OPTFLAG = /Ox
+! else # MAXSPEED NOTE(cgenova): Changing MAXSPEED to be /O2 instead of /Ox
+OPTFLAG = /O2
 ! endif
 
 # Use link time code generation if not worried about size
