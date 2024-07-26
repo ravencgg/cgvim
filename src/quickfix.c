@@ -6424,6 +6424,11 @@ vgr_process_files(
 	    vgr_display_fname(fname);
 	}
 
+	// NOTE(cgenova): Allow canceling a vimgrep with ctrl+c
+	if (aborting())
+	    goto theend;
+	// NOTE(cgenova): End modification
+
 	buf = buflist_findname_exp(cmd_args->fnames[fi]);
 	if (buf == NULL || buf->b_ml.ml_mfp == NULL)
 	{
